@@ -1,0 +1,172 @@
+ <!-- <p>product works!</p>
+
+<div class="product">
+
+    <h3>Store Name : {{StoreName | uppercase}}</h3>
+    <br>
+    <img src={{Storelogo}}>
+    <br>
+    <input type="text" [(ngModel)]="ClientName"> {{ClientName}}
+    <br>
+    <select>
+        Category:
+        <option value=" " *ngFor="let cat of CategoryList">
+            <a >{{cat.Name}}</a>
+        </option>
+    </select>
+    <button class="btn btn-primary" (click)="ToggleProduct()">Product</button>
+
+    <div *ngIf="IsPurchased else block">
+        <table>
+            <thead>
+                <tr>
+                    <th> #</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of ProductList; index as i">
+                <th>{{i}}</th>
+                <th>{{product.Name}}</th>
+                <th>{{product.Price}}</th>
+                <th>{{product.Quantity}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #block>
+        <h1>
+            Thanks {{ClientName}}
+    </h1>
+    </ng-template>
+    <h4 *ngIf="Discount !=0">
+        Offering discount of {{ Discount | percent}}
+    </h4>
+
+
+    <p><input type="text" id="product_Id" name="product_Id" #product_Id></p>
+    <h1> {{product_Id}}</h1>
+    
+    <button type="button">get by id</button>
+    <div *ngIf="IsPurchased else block">
+        <table>
+        <thead>
+            <tr>
+                <th> #</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of ProductList; index as i">
+            <th>{{i}}</th>
+            <th>{{product.Name}}</th>
+            <th>{{product.Price}}</th>
+            <th>{{product.Quantity}}</th>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    
+</div> 
+
+<h1>{{StoreName}}</h1>
+<br>
+ <img [src]="Storelogo" width="80px" height="50px">
+ <br><br> 
+ <h3>We offer an explicit discount of: {{Discount}}</h3> 
+
+ <h1>{{StoreName |uppercase}}</h1>
+ <div>
+ <h4 *ngIf="Discount !=0">
+    We offer an explicit discount of 
+        Offering discount of {{ Discount | percent}}
+    </h4>
+</div>
+ <input type="text" [(ngModel)]="ClientName" #txtInput/>
+{{ClientName}} 
+
+
+-->
+
+<!-- <div *ngFor="let item of ProductList" class="">
+
+     ID
+      {{item.Id}}
+  Name-
+  
+       {{item.Name}}
+
+       Quantity- {{item.Quantity}}
+
+       Price-{{item.Price}}
+       <br>
+
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr >
+        <th scope="col">#Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ProductList">
+        <th scope="row">  {{item.Id}}</th>
+        <td> {{item.Name}}</td>
+        <td> {{item.Quantity}}</td>
+        <td>{{item.Price}}</td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+  <br>
+<br>
+<input type="hidden"  [value]="IsPurchased"   #Status>
+<input type="button" (click)="show(Status.value)"  value="Buy" class="btn btn-primary"/>
+  <div class="alert alert-primary" role="alert" *ngIf="IsPurchased">
+    Thanks for purchasing from our Store {{ClientName}} 
+  </div>
+
+
+  -->
+
+  <!-- <table class="table" style="margin-top: 10%;">
+    <thead class="thead-dark">
+      <tr >
+        <th scope="col">#Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ProductList">
+        <th scope="row">  {{item.Id}}</th>
+        <td> {{item.Name}}</td>
+        <td> {{item.Quantity}}</td>
+        <td>{{item.Price}}</td>
+      </tr>
+    
+    </tbody>
+  </table> -->
+
+
+  <button (click)="WithDiscount()" class="btn btn-primary" style="margin-top: 10%;"> Products with discount </button>
+     
+  <br>
+  <br>
+
+  <button (click)="WithoutDiscount()" class="btn btn-primary"> product without discounts </button>
+
+  <router-outlet>
+      
+  </router-outlet>
